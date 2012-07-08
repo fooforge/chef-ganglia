@@ -40,7 +40,7 @@ udp_send_channel {
 /* You can specify as many udp_recv_channels as you like as well. */
 udp_recv_channel {
 <% if node[:ganglia][:bind_address] %>
-  bind = 127.0.0.1
+  bind = <%= node[:ganglia][:bind_address] %>
 <% end %>
   port = 8649
 }
@@ -49,7 +49,7 @@ udp_recv_channel {
    an xml description of the state of the cluster */
 tcp_accept_channel {
 <% if node[:ganglia][:bind_address] %>
-  bind = 127.0.0.1
+  bind = <%= node[:ganglia][:bind_address] %>
 <% end %>
   port = 8649
 }
